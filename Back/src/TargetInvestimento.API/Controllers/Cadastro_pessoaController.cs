@@ -31,7 +31,7 @@ namespace TargetInvestimento.API.Controllers
         {
             return context.Cadastro_Pessoas.Where(cadastro => cadastro.Cadastro_pessoaID == id);
         }
-        // usando o postman, o professor deu exemplos com metodo Post
+
         [HttpPost]
         public IEnumerable<Cadastro_pessoa> Post()
         {

@@ -21,7 +21,11 @@ namespace TargetInvestimento.API.Data.Migrations
                     Cidade = table.Column<string>(type: "TEXT", nullable: true),
                     UF = table.Column<string>(type: "TEXT", nullable: true),
                     Complemento = table.Column<string>(type: "TEXT", nullable: true),
-                    Renda_mensal = table.Column<int>(type: "INTEGER", nullable: false)
+                    Renda_mensal = table.Column<int>(type: "INTEGER", nullable: true),
+                    Cadastrado_PlanoVip = table.Column<bool>(type: "BOOLEAN", nullable: true),
+                    Oferecer_PlanoVip = table.Column<bool>(type: "BOOLEAN", nullable: true),
+                    
+
                 },
                 constraints: table =>
                 {

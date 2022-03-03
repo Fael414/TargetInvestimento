@@ -24,5 +24,9 @@ namespace TargetInvestimento.API
 
         public int Renda_mensal { get; set; }
 
+        public bool Cadastrado_PlanoVip { get; set; }
+        public bool Oferecer_PlanoVip { get; set; }
+        
+
     }
 }

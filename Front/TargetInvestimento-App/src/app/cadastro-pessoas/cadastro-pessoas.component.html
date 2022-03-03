@@ -1,0 +1,9 @@
+<h1>Cadastro pessoas do Component</h1>
+
+
+<div *ngFor="let cadastro of cadastros_pessoa">
+  <p><b>Nome: </b>{{cadastro.nomeCompleto}}</p>
+  <p><b>Renda mensal:</b> R$ {{cadastro.renda_mensal}}</p>
+  <p><b>Cadastro no plano VIP: </b>{{cadastro.cadastrado_PlanoVip}}</p>
+  <hr>
+</div>
