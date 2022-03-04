@@ -1,9 +1,61 @@
-<h1>Cadastro pessoas do Component</h1>
-
-
-<div *ngFor="let cadastro of cadastros_pessoa">
-  <p><b>Nome: </b>{{cadastro.nomeCompleto}}</p>
-  <p><b>Renda mensal:</b> R$ {{cadastro.renda_mensal}}</p>
-  <p><b>Cadastro no plano VIP: </b>{{cadastro.cadastrado_PlanoVip}}</p>
-  <hr>
+<h2>Consulta de pessoas cadastradas</h2>
+<hr>
+ <div class="form-inline"> <!--Temporariamente alterado para Div -->
+  <div class="form-group mb2">
+  <label class="mr-2">Filtro</label>
+  <input
+  type="text"
+  class ="form-control mr-2"
+  placeholer="buscar"
+  [(ngModel)]="filtroLista"
+  >
+  </div>
 </div>
+<hr>
+
+<table class="table tabl-stripped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Id</th>
+      <th>Nome completo</th>
+      <th>Data de nascimento</th>
+      <th>CPF</th>
+      <th>Logradouro</th>
+      <th>Bairro</th>
+      <th>CEP</th>
+      <th>Cidade</th>
+      <th>UF</th>
+      <th>Complemento</th>
+      <th>Renda mensal</th>
+    </tr>
+  </thead>
+
+  <tbody *ngIf="cadastros_pessoa && cadastros_pessoa.length">
+    <!-- Verificando se há algum evento cadastro -->
+    <tr *ngFor="let cadastros_pessoa of cadastrosFiltrados">
+      <td>{{cadastros_pessoa.cadastro_pessoaID}}</td>
+      <td>{{cadastros_pessoa.nomeCompleto}}</td>
+      <td>{{cadastros_pessoa.dataNascimento}}</td>
+      <td>{{cadastros_pessoa.cpf}}</td>
+      <td>{{cadastros_pessoa.logradouro}}</td>
+      <td>{{cadastros_pessoa.bairro}}</td>
+      <td>{{cadastros_pessoa.cep}}</td>
+      <td>{{cadastros_pessoa.cidade}}</td>
+      <td>{{cadastros_pessoa.uf}}</td>
+      <td>{{cadastros_pessoa.complemento}}</td>
+      <td>{{cadastros_pessoa.renda_mensal}}</td>
+      <td>
+        <button type="button" class="btn btn-primary btn-sm mr-2">Editar</button>  <!--ainda nao implementado -->
+        <button type="button" class="btn btn-danger btn-sm">Excluir</button> <!--ainda nao implementado -->
+      </td>
+    </tr>
+  </tbody>
+  <tfoot *ngIf="cadastros_pessoa && !cadastros_pessoa.length">
+    <!-- Quando não há uma pessoas cadastrada, retorna a mensagem abaixo -->
+    <tr>
+      <td colspan="8" class="text-center">
+        <h4>Nenhum cadastro encontrado</h4>
+      </td>
+    </tr>
+  </tfoot>
+</table>

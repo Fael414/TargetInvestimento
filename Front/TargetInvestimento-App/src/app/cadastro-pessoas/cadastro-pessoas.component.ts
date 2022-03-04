@@ -8,7 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroPessoasComponent implements OnInit {
 
-  public cadastros_pessoa: any;
+  public cadastros_pessoa: any = [];
+  public cadastrosFiltrados: any = [];
+
+  private _filtroLista: string = '';
+
+  public get filtroLista(){
+    return this._filtroLista;
+  }
+
+  public set filtroLista(value: string) {
+    this._filtroLista = value;
+    this.cadastrosFiltrados = this.filtroLista ? this.filtrarCadastros(this.filtroLista) : this.cadastros_pessoa;
+    // para a devida funcionalidade do filtro de busca
+  }
+
+  filtrarCadastros(filtrarPor: string): any {
+    filtrarPor = filtrarPor.toLocaleLowerCase();
+    return this.cadastros_pessoa.filter(
+      (cadastros_pessoa: any) => cadastros_pessoa.nomeCompleto.toLocaleLowerCase().indexOf(filtrarPor) !== -1 ||
+      cadastros_pessoa.cpf.toLocaleLowerCase().indexOf(filtrarPor) !== -1||
+      cadastros_pessoa.cep.toLocaleLowerCase().indexOf(filtrarPor) !== -1
+    )
+  }
 
   constructor(private http: HttpClient) { }
 
