@@ -74,3 +74,22 @@ V 0.1 : Criação do projeto em NET CORE 5
 V 0.2 : Criação do contexto, migrations e database
 
 V 0.3 : Instalação do Angular e os primeiros passados dados ao frontend do projeto
+
+V 0.4 : Criação de Navbar, Grid e alguns ajustes no layout do frontend
+
+
+## Softwares necessários para rodar a aplicação
+
+
+Em breve serão listados.
+
+
+## Iniciar a aplicação
+
+Para iniciar a aplicação, abra o local da pasta em um terminal, realize um split e digite em cada um dos terminais:
+
+1°terminal:
+cd back/src/TargetInvestimento.Api/ em seguida digite dotnet run
+
+2°terminal:
+cd front/TargetInvestimento-App em seguida digite ng serve
