@@ -81,31 +81,31 @@ V.0.45 : Organização de multiplas camadas e novo migrations
 
 ## Checklist de pendência do escopo do projeto:
 
-# Metodo Post para solicitar dados de cadastro:
+## Metodo Post para solicitar dados de cadastro:
 
 O esqueleto do Post foi criado, porém o metodo não foi implementado
 
-# Json com os campos de cadastrado e planovip
+## Json com os campos de cadastrado e planovip
 Não implementado
 
-# Integração com API IBGE
-Não implementado
-
-
-# Metodo oferencendo o plano vip para os clientes com renda superior a 6k após o cadastro
-Não implementado
-
-# Metodo consultando clientes dado um valor minimo de renda mensal
-Não implementado
-
-# Metodo consultando clientes dado uma janela de data de cadastro
+## Integração com API IBGE
 Não implementado
 
 
-# Metodo onde o cliente consulta seus dados de endereço e atualiza caso queira 
+## Metodo oferencendo o plano vip para os clientes com renda superior a 6k após o cadastro
 Não implementado
 
-# Metodo consultando adesão dos clientes que podem aderir ao plano vip
+## Metodo consultando clientes dado um valor minimo de renda mensal
+Não implementado
+
+## Metodo consultando clientes dado uma janela de data de cadastro
+Não implementado
+
+
+## Metodo onde o cliente consulta seus dados de endereço e atualiza caso queira 
+Não implementado
+
+## Metodo consultando adesão dos clientes que podem aderir ao plano vip
 Não implementado
 
 
