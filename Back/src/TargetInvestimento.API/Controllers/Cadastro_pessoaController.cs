@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using TargetInvestimento.API.Data;
+using TargetInvestimento.Persistence;
+using TargetInvestimento.Domain;
 
 namespace TargetInvestimento.API.Controllers
 {
@@ -13,9 +14,9 @@ namespace TargetInvestimento.API.Controllers
     public class Cadastro_pessoaController : ControllerBase
     {
 
-        private readonly DataContext context;
+        private readonly TargeInvestimentoContext context;
 
-        public Cadastro_pessoaController(DataContext context)
+        public Cadastro_pessoaController(TargeInvestimentoContext context)
         {
             this.context = context;
         }
@@ -27,9 +28,23 @@ namespace TargetInvestimento.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public IEnumerable<Cadastro_pessoa> GetById(int id)
+        public IEnumerable<Cadastro_pessoa> GetByCPF(string cpf)
         {
-            return context.Cadastro_Pessoas.Where(cadastro => cadastro.Cadastro_pessoaID == id);
+            return context.Cadastro_Pessoas.Where(cadastro => cadastro.CPF == cpf);
+        }
+
+        [HttpGet("{DataCadastro}")]
+        public IEnumerable<Cadastro_pessoa> GetbyDataCadastro(DateTime Datacadastro)
+        // Retorno por data de cadastro. Falta implementar a "janela" entre datas
+        {
+            return context.Cadastro_Pessoas.Where(cadastro => cadastro.DataCadastro == Datacadastro);
+        }
+
+        [HttpPut("{id}")]
+        public IEnumerable<Cadastro_pessoa> PutById(int id)
+        // Metodo Put para atualizar endereço - Não implementado
+        {
+            return context.Cadastro_Pessoas.Where(cadastro => cadastro.Id == id);
         }
 
         [HttpPost]
@@ -41,7 +56,7 @@ namespace TargetInvestimento.API.Controllers
         [HttpPost("{id}")]
         public Cadastro_pessoa PostById(int id)
         {
-            return context.Cadastro_Pessoas.FirstOrDefault(cadastro => cadastro.Cadastro_pessoaID == id);
+            return context.Cadastro_Pessoas.FirstOrDefault(cadastro => cadastro.Id == id);
         }
 
     }

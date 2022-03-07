@@ -1,14 +1,14 @@
 using System;
 
-namespace TargetInvestimento.API
+namespace TargetInvestimento.Domain
 {
     public class Cadastro_pessoa
     {
-        public int Cadastro_pessoaID { get; set; }
+        public int Id { get; set; }
 
         public string NomeCompleto { get; set; }
 
-        public string DataNascimento { get; set; }
+        public DateTime DataNascimento { get; set; }
 
         public string CPF { get; set; }
         public string Logradouro { get; set; }
@@ -24,8 +24,10 @@ namespace TargetInvestimento.API
 
         public int Renda_mensal { get; set; }
 
+        public DateTime DataCadastro{ get; set; } // Informação será retornada automaticamente ao concluir o cadastro
+
         public bool Cadastrado_PlanoVip { get; set; }
-        public bool Oferecer_PlanoVip { get; set; }
+        public bool Oferecer_PlanoVip { get; set; } // A oferta só será feita se a renda for maior ou igual a  6k
         
 
     }

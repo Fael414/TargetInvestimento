@@ -77,19 +77,72 @@ V 0.3 : Instalação do Angular e os primeiros passados dados ao frontend do pro
 
 V 0.4 : Criação de Navbar, Grid e alguns ajustes no layout do frontend
 
+V.0.45 : Organização de multiplas camadas e novo migrations
 
-## Softwares necessários para rodar a aplicação
+## Checklist de pendência do escopo do projeto:
+
+# Metodo Post para solicitar dados de cadastro:
+
+O esqueleto do Post foi criado, porém o metodo não foi implementado
+
+# Json com os campos de cadastrado e planovip
+Não implementado
+
+# Integração com API IBGE
+Não implementado
 
 
-Em breve serão listados.
+# Metodo oferencendo o plano vip para os clientes com renda superior a 6k após o cadastro
+Não implementado
+
+# Metodo consultando clientes dado um valor minimo de renda mensal
+Não implementado
+
+# Metodo consultando clientes dado uma janela de data de cadastro
+Não implementado
 
 
-## Iniciar a aplicação
+# Metodo onde o cliente consulta seus dados de endereço e atualiza caso queira 
+Não implementado
 
-Para iniciar a aplicação, abra o local da pasta em um terminal, realize um split e digite em cada um dos terminais:
+# Metodo consultando adesão dos clientes que podem aderir ao plano vip
+Não implementado
+
+
+
+## Aplicações necessárias para rodar o projeto
+
+Dotnet SDK 5.0.405 // https://dotnet.microsoft.com/en-us/download/dotnet/5.0
+Node.Js: '12.16.3' // https://nodejs.org/dist/v12.16.3/
+Angular CLI: 12.2.16 // https://www.npmjs.com/package/@angular/cli/v/12.2.16
+
+
+
+## Iniciar a aplicação do projeto
+
+Após as instalações necessárias, Para iniciar a aplicação, abra o local da pasta em um terminal, realize um split e digite em cada um dos terminais:
 
 1°terminal:
 cd back/src/TargetInvestimento.Api/ em seguida digite dotnet run
 
 2°terminal:
 cd front/TargetInvestimento-App em seguida digite ng serve
+
+## Explicação do diagrama UML anexado ao projeto
+
+O acesso ao sistema será permitido dado após criação do acesso com um login e senha, que está associado a tabela Perfil_usuário. Por default, todos os logins criados estarão associados ao perfil "Cliente", onde este pode utilizar o sistema de cadastro para cadastrar suas informações e consulta-las (Apenas poderá consultar e alterar os cadastros que forem criados pelo próprio perfil).
+
+O perfil de "Desenvolvedor" dentro da tabela perfil de usuário, podera alterar o tipo de perfil_usuário de cada registro por fora da aplicação, quando solicitado
+
+O perfil de Product Owner poderá consultar as informações referentes a KPI dentro da aplicação
+
+O perfil de Gestor de investimento, poderá realizar consultar com base nas informações de renda mensal e data de cadastro de cada cliente registrado no sistema.
+
+Todos os perfis de usuário podem realizar novos cadastros, o que difere cada um é a forma que estará disponivel de consulta de informações.
+
+A tabela "Cadastro de pessoa" contem um formulario com informações a serem preenchidas para efetivação do cadastro.
+
+
+
+
+
